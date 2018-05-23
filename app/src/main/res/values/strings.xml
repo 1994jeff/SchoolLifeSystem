@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">SchoolLifeSystem</string>
     <string name="my_function">我的功能</string>
+    <string name="add_city">添加城市</string>
+    <string name="city_list">城市列表</string>
+    <string name="city_bj">北京</string>
     <string name="my_info">我的信息</string>
     <string name="my_school">校园聊天室</string>
     <string name="school_info">校园信息</string>
@@ -22,4 +25,14 @@
     <string name="talk">聊天大厅</string>
     <string name="name">名字</string>
     <string name="textCanNotNull">信息不能为空!</string>
+    <string name="presure">气压</string>
+    <string name="wind_speed">风速</string>
+    <string name="visibility">能见度</string>
+    <string name="humidity">相对湿度</string>
+    <string name="feels_like">体感温度</string>
+    <string name="wind_direction_degree">风向角</string>
+    <string name="today_weather">今日天气</string>
+    <string name="max_temp">最高温度</string>
+    <string name="min_temp">最低温度</string>
+    <string name="city_add">添加</string>
 </resources>

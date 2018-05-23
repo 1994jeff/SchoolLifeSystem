@@ -6,4 +6,8 @@
     <dimen name="talk_padding">8dp</dimen>
     <dimen name="talk_margin">10dp</dimen>
     <dimen name="talk_text_size">20dp</dimen>
+    <dimen name="city_text_size">30dp</dimen>
+    <dimen name="weather_width">120dp</dimen>
+    <dimen name="weather_text_normal">20dp</dimen>
+    <dimen name="weather_text_small">12dp</dimen>
 </resources>

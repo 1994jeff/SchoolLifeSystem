@@ -20,8 +20,10 @@
         android:layout_height="wrap_content"
         android:text="@string/my_school"
         android:padding="20dp"
+        android:visibility="gone"
         />
-    <include layout="@layout/line_layout"/>
+    <include layout="@layout/line_layout"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/weather"
@@ -35,7 +37,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/my_function"
+        android:text="@string/city_list"
         android:padding="20dp"
         />
     <include layout="@layout/line_layout"/>

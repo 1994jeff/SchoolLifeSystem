@@ -12,4 +12,12 @@ public class Constant {
     public static final String IP_ADDRESS = "139.199.182.22";
     public static final int PORT = 8888;
 
+    //未来3天天气API
+    public static final String WEATHER_API = "https://api.seniverse.com/v3/weather/daily.json?key=m9icgr1pa9k0ithe&location=";
+    public static final String WEATHER_API_END = "&language=zh-Hans&unit=c&start=0&days=3";
+
+    //实时天气API
+    public static final String WEATHER_API_NOW = "https://api.seniverse.com/v3/weather/now.json?key=m9icgr1pa9k0ithe&location=";
+    public static final String WEATHER_API_NOW_END = "&language=zh-Hans&unit=c";
+
 }

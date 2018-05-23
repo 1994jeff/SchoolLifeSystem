@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/leftTalk"
@@ -10,24 +10,27 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="@dimen/talk_padding"
-        android:visibility="visible">
+        android:gravity="left"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/leftTalkName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/talk_text_size"
+            android:text="@string/name"
+            android:paddingRight="@dimen/talk_padding"
             android:textColor="@color/colorPrimary"
-            android:text="@string/name"/>
+            android:textSize="@dimen/talk_text_size"/>
 
         <TextView
             android:id="@+id/leftTalkContent"
-            android:layout_weight="1"
-            android:gravity="left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/talk_padding"
-            android:text="@string/talk"/>
+            android:background="@drawable/talk_text_shape"
+            android:gravity="left"
+            android:padding="@dimen/talk_padding"
+            android:text="hah"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -36,23 +39,26 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="@dimen/talk_padding"
-        android:visibility="gone">
+        android:visibility="gone"
+        android:gravity="right"
+        >
 
         <TextView
             android:id="@+id/rightTalkContent"
-            android:layout_weight="1"
             android:gravity="right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingRight="@dimen/talk_padding"
+            android:background="@drawable/talk_text_shape"
+            android:padding="@dimen/talk_padding"
             android:text="@string/talk"/>
 
         <TextView
             android:id="@+id/rightTalkName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:textSize="@dimen/talk_text_size"
             android:textColor="@color/colorPrimary"
+            android:paddingLeft="@dimen/talk_padding"
             android:text="@string/name"/>
     </LinearLayout>
 

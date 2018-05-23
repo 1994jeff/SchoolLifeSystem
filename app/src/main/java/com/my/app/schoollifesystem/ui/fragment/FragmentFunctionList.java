@@ -24,6 +24,8 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
         schoolTalk = view.findViewById(R.id.schoolTalk);
         weather = view.findViewById(R.id.weather);
         myInfo.setOnClickListener(this);
+        schoolTalk.setOnClickListener(this);
+        weather.setOnClickListener(this);
     }
 
     @Override
@@ -46,6 +48,7 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
 //                switchFragment();
                 break;
             case R.id.weather:
+                switchFragment(new FragmentWeather(),R.string.weather);
                 break;
         }
     }
