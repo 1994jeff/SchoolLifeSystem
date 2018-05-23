@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">SchoolLifeSystem</string>
+    <string name="my_function">我的功能</string>
+    <string name="my_info">我的信息</string>
+    <string name="my_school">校园聊天室</string>
+    <string name="school_info">校园信息</string>
+    <string name="weather">天气预报</string>
+    <string name="intro">清华大学</string>
+    <string name="intro_content">清华大学的前身清华学堂始建于1911年，因水木清华而得名，是清政府设立的留美预备学校，其建校的资金源于1908年美国退还的部分庚子赔款。1912年更名为清华学校。1928年更名为国立清华大学。1937年抗日战争全面爆发后南迁长沙，与北京大学、南开大学组建国立长沙临时大学，1938年迁至昆明改名为国立西南联合大学。1946年迁回清华园。1949年中华人民共和国成立，清华大学进入了新的发展阶段。1952年全国高等学校院系调整后成为多科性工业大学。1978年以来逐步恢复和发展为综合性的研究型大学。</string>
+    <string name="inputLoginName">请输入用户名</string>
+    <string name="inputLoginPsd">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="timeTooShort">再次点击即可退出</string>
+    <string name="back">返回</string>
+    <string name="epmtyparam">账户参数不能为空</string>
+    <string name="psdsame">两次密码不一致</string>
+    <string name="psderror">用户名或密码错误</string>
+    <string name="registerok">注册成功</string>
+    <string name="input_talk">请输入聊天文字</string>
+    <string name="send">发送</string>
+    <string name="talk">聊天大厅</string>
+    <string name="name">名字</string>
+    <string name="textCanNotNull">信息不能为空!</string>
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/leftTalk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/talk_padding"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/leftTalkName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/talk_text_size"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/name"/>
+
+        <TextView
+            android:id="@+id/leftTalkContent"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/talk_padding"
+            android:text="@string/talk"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rightTalk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/talk_padding"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/rightTalkContent"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/talk_padding"
+            android:text="@string/talk"/>
+
+        <TextView
+            android:id="@+id/rightTalkName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/talk_text_size"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/name"/>
+    </LinearLayout>
+
+</LinearLayout>
