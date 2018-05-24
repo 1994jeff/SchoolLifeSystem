@@ -51,7 +51,7 @@ public class FragmentTalk extends BaseCoreFragment<TalkPresenter> {
     };
 
     private void addSystemMsg(Object obj) {
-        showFragmentToast((String) obj);
+//        showFragmentToast((String) obj);
     }
 
     private void addPeopleTalk(Object obj) {
