@@ -39,4 +39,5 @@
     <string name="clear_city">清除城市列表</string>
     <string name="clear_ok">添加城市列表已清除~</string>
     <string name="add_city_ok">城市添加成功!</string>
+    <string name="unknow">暂无</string>
 </resources>

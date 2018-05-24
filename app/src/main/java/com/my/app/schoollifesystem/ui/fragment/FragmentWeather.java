@@ -140,7 +140,6 @@ public class FragmentWeather extends BaseCoreFragment<WeatherPresenter> {
             }
             @Override
             public void onError(VolleyError error) {
-                showFragmentToast(error.getMessage());
             }
         });
     }
@@ -172,7 +171,7 @@ public class FragmentWeather extends BaseCoreFragment<WeatherPresenter> {
             }
             @Override
             public void onError(VolleyError error) {
-                showFragmentToast(error.getMessage());
+                showFragmentToast("暂无天气信息,请更换城市");
             }
         });
     }

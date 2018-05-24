@@ -14,7 +14,7 @@
             android:id="@+id/cityName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/city_bj"
+            android:text="@string/unknow"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/city_text_size"
             android:layout_centerInParent="true"/>
@@ -50,7 +50,7 @@
                 android:id="@+id/weather"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/city_bj"
+                android:text="@string/unknow"
                 android:textSize="@dimen/weather_text_normal"
                 android:paddingRight="@dimen/talk_text_size"
                 android:textColor="@color/colorWhite"/>
@@ -58,7 +58,7 @@
                 android:id="@+id/temptrue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/city_bj"
+                android:text="@string/unknow"
                 android:paddingLeft="@dimen/talk_text_size"
                 android:textSize="@dimen/weather_text_normal"
                 android:textColor="@color/colorWhite"/>
@@ -85,7 +85,7 @@
                     android:id="@+id/pressure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/city_bj"
+                    android:text="@string/unknow"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"/>
             </LinearLayout>
@@ -104,7 +104,7 @@
                     android:id="@+id/wind_speed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/city_bj"
+                    android:text="@string/unknow"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"/>
             </LinearLayout>
@@ -123,7 +123,7 @@
                     android:id="@+id/visibility"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/city_bj"
+                    android:text="@string/unknow"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"/>
             </LinearLayout>
@@ -149,7 +149,7 @@
                     android:id="@+id/wind_direction_degree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/city_bj"
+                    android:text="@string/unknow"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"/>
             </LinearLayout>
@@ -168,7 +168,7 @@
                     android:id="@+id/feels_like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/city_bj"
+                    android:text="@string/unknow"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"/>
             </LinearLayout>
@@ -187,7 +187,7 @@
                     android:id="@+id/humidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/city_bj"
+                    android:text="@string/unknow"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"/>
             </LinearLayout>
@@ -217,14 +217,14 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
                 <TextView
                     android:id="@+id/text_day"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_weight="1"
@@ -244,7 +244,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_weight="1"
@@ -264,7 +264,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -285,14 +285,14 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
                 <TextView
                     android:id="@+id/text_day2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_weight="1"
@@ -312,7 +312,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_weight="1"
@@ -332,7 +332,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -353,14 +353,14 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
                 <TextView
                     android:id="@+id/text_day3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_weight="1"
@@ -380,7 +380,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_weight="1"
@@ -400,7 +400,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/weather_text_small"
                     android:textColor="@color/colorWhite"
-                    android:text="@string/today_weather"/>
+                    android:text="@string/unknow"/>
             </LinearLayout>
         </LinearLayout>
 
