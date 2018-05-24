@@ -71,10 +71,14 @@ public class FragmentTalk extends BaseCoreFragment<TalkPresenter> {
                 leftTalkName.setText(message.getName());
                 leftTalkContent.setText(message.getContent());
             }else{
-                leftTalk.setVisibility(View.GONE);
-                rightTalk.setVisibility(View.VISIBLE);
-                rightTalkName.setText(message.getName());
-                rightTalkContent.setText(message.getContent());
+                if(!message.getName().equals("系统消息")){
+                    leftTalk.setVisibility(View.GONE);
+                    rightTalk.setVisibility(View.VISIBLE);
+                    rightTalkName.setText(message.getName());
+                    rightTalkContent.setText(message.getContent());
+                }else{
+//                    showFragmentToast(message.getContent());
+                }
             }
         }else{
 
