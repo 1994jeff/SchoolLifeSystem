@@ -35,9 +35,19 @@
     <include layout="@layout/line_layout"/>
 
     <TextView
+        android:id="@+id/cityList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/city_list"
+        android:padding="20dp"
+        />
+    <include layout="@layout/line_layout"/>
+
+    <TextView
+        android:id="@+id/clearCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/clear_city"
         android:padding="20dp"
         />
     <include layout="@layout/line_layout"/>

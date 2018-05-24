@@ -68,6 +68,7 @@ public class LoginPresenter implements BasePresenter {
 
                 @Override
                 public void onError(VolleyError error) {
+                    mView.showToast(error.getMessage());
                 }
             });
         }

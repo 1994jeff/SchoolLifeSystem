@@ -1,5 +1,7 @@
 package com.my.app.schoollifesystem.ui.fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,15 +19,21 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
     private TextView myInfo;
     private TextView schoolTalk;
     private TextView weather;
+    private TextView cityList;
+    private TextView clearCity;
 
     @Override
     protected void initView(View view) {
         myInfo = view.findViewById(R.id.myInfo);
         schoolTalk = view.findViewById(R.id.schoolTalk);
         weather = view.findViewById(R.id.weather);
+        cityList = view.findViewById(R.id.cityList);
+        clearCity = view.findViewById(R.id.clearCity);
         myInfo.setOnClickListener(this);
         schoolTalk.setOnClickListener(this);
         weather.setOnClickListener(this);
+        cityList.setOnClickListener(this);
+        clearCity.setOnClickListener(this);
     }
 
     @Override
@@ -44,12 +52,22 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
             case R.id.myInfo:
                 switchFragment(new FragmentLogin(),R.string.login);
                 break;
-            case R.id.schoolTalk:
-//                switchFragment();
+            case R.id.cityList:
+                switchFragment(new FragmentMyCity(),R.string.city_list);
                 break;
             case R.id.weather:
                 switchFragment(new FragmentWeather(),R.string.weather);
                 break;
+            case R.id.clearCity:
+                clear();
+                break;
         }
+    }
+
+    private void clear() {
+        //获取sharedPreferences对象
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("city", Context.MODE_PRIVATE);
+        sharedPreferences.edit().clear().commit();
+        showFragmentToast(R.string.clear_ok);
     }
 }

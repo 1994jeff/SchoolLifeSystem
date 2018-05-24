@@ -15,7 +15,10 @@ import com.my.app.schoollifesystem.common.ActivityManager;
 import com.my.app.schoollifesystem.ui.fragment.FragmentFunctionList;
 import com.my.app.schoollifesystem.ui.fragment.FragmentIndex;
 import com.my.app.schoollifesystem.ui.fragment.FragmentLogin;
+import com.my.app.schoollifesystem.ui.fragment.FragmentMyCity;
 import com.my.app.schoollifesystem.ui.fragment.FragmentRegister;
+import com.my.app.schoollifesystem.ui.fragment.FragmentTalk;
+import com.my.app.schoollifesystem.ui.fragment.FragmentWeather;
 
 public class MainActivity extends BaseActivity {
 
@@ -88,6 +91,16 @@ public class MainActivity extends BaseActivity {
             mainHead.setVisibility(View.GONE);
             this.title.setText(R.string.login);
             fragmentHead.setVisibility(View.VISIBLE);
+        }else if(fragment instanceof FragmentTalk){
+            mainHead.setVisibility(View.GONE);
+            this.title.setText(R.string.login);
+            fragmentHead.setVisibility(View.VISIBLE);
+        }else if(fragment instanceof FragmentMyCity){
+            mainHead.setVisibility(View.VISIBLE);
+            fragmentHead.setVisibility(View.GONE);
+        }else if(fragment instanceof FragmentWeather){
+            mainHead.setVisibility(View.VISIBLE);
+            fragmentHead.setVisibility(View.GONE);
         }
         super.onBackPressed();
     }

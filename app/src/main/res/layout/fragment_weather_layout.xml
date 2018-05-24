@@ -39,7 +39,7 @@
             android:id="@+id/weatherImg"
             android:layout_width="@dimen/weather_width"
             android:layout_height="@dimen/weather_width"
-            android:src="@mipmap/w0"
+            android:src="@mipmap/w99"
             />
         <LinearLayout
             android:layout_width="match_parent"

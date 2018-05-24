@@ -84,7 +84,12 @@ public class FragmentWeather extends BaseCoreFragment<WeatherPresenter> {
         max_temp3 = view.findViewById(R.id.max_temp3);
         min_temp3 = view.findViewById(R.id.min_temp3);
         addCity = view.findViewById(R.id.addCity);
-
+        addCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchFragment(new FragmentAddCity(),R.string.add_city);
+            }
+        });
         getWeatherFromInternet();
     }
 
@@ -94,7 +99,7 @@ public class FragmentWeather extends BaseCoreFragment<WeatherPresenter> {
     }
 
     private void getThreeDayWeather() {
-        String city = "杭州";
+        String city = getString();
         String url  = Constant.WEATHER_API+city+Constant.WEATHER_API_END;
         VolleyRequest.requestGet(getActivity(),url,"",null,new VolleyInterface(mContext, VolleyInterface.mListener, VolleyInterface.mErrorListener){
             @Override
@@ -135,13 +140,22 @@ public class FragmentWeather extends BaseCoreFragment<WeatherPresenter> {
             }
             @Override
             public void onError(VolleyError error) {
-
+                showFragmentToast(error.getMessage());
             }
         });
     }
 
+    private String getString() {
+        String city = "北京";
+        Bundle bundle = getArguments();
+        if(bundle!=null){
+            city = bundle.getString("city");
+        }
+        return city;
+    }
+
     private void getNowWeather() {
-        String city = "杭州";
+        String city = getString();
         String url  = Constant.WEATHER_API_NOW+city+Constant.WEATHER_API_NOW_END;
         VolleyRequest.requestGet(getActivity(),url,"",null,new VolleyInterface(mContext, VolleyInterface.mListener, VolleyInterface.mErrorListener){
             @Override
@@ -158,7 +172,7 @@ public class FragmentWeather extends BaseCoreFragment<WeatherPresenter> {
             }
             @Override
             public void onError(VolleyError error) {
-
+                showFragmentToast(error.getMessage());
             }
         });
     }
