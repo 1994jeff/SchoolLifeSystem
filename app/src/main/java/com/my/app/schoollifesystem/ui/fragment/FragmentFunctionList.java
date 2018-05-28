@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.my.app.schoollifesystem.R;
@@ -26,6 +29,9 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
     private TextView stuList;
     private TextView timetable;
     private TextView setInfo;
+    private RelativeLayout datePickerContainer;
+    LinearLayout container;
+    DatePicker datePicker;
 
     @Override
     protected void initView(View view) {
@@ -39,6 +45,11 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
         stuList = view.findViewById(R.id.stuList);
         timetable = view.findViewById(R.id.timetable);
         setInfo = view.findViewById(R.id.setInfo);
+
+        container = view.findViewById(R.id.contain);
+        datePickerContainer = view.findViewById(R.id.datePickerContainer);
+        datePicker = view.findViewById(R.id.datePicker);
+
         myInfo.setOnClickListener(this);
         schoolTalk.setOnClickListener(this);
         weather.setOnClickListener(this);
@@ -82,6 +93,7 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
                 switchFragment(new FragmentClass(),R.string.classs);
                 break;
             case R.id.timetable:
+
                 break;
             case R.id.stuList:
                 break;
