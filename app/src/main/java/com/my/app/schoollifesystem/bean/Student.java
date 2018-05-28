@@ -9,17 +9,25 @@ import java.io.Serializable;
 public class Student implements Serializable{
 
     private String id;
-    private String studentNo;
+    private String stuNo;
     private String name;
     private String classNo;
-    private String remark;
+    private String age;
 
-    public String getStudentNo() {
-        return studentNo;
+    public String getId() {
+        return id;
     }
 
-    public void setStudentNo(String studentNo) {
-        this.studentNo = studentNo;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getStuNo() {
+        return stuNo;
+    }
+
+    public void setStuNo(String stuNo) {
+        this.stuNo = stuNo;
     }
 
     public String getName() {
@@ -38,19 +46,11 @@ public class Student implements Serializable{
         this.classNo = classNo;
     }
 
-    public String getRemark() {
-        return remark;
+    public String getAge() {
+        return age;
     }
 
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public void setAge(String age) {
+        this.age = age;
     }
 }

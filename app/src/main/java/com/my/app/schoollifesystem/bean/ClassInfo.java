@@ -10,10 +10,17 @@ public class ClassInfo implements Serializable {
 
     private String id;
     private String classNo;
-    private String className;
     private String profession;
-    private String introduce;
-    private String remark;
+    private String className;
+    private String classPeople;
+
+    public String getClassPeople() {
+        return classPeople;
+    }
+
+    public void setClassPeople(String classPeople) {
+        this.classPeople = classPeople;
+    }
 
     public String getId() {
         return id;

@@ -10,9 +10,35 @@ import java.util.Date;
 public class Card implements Serializable {
 
     private String id;
-    private String num;
+    private String cardNo;
     private String status;
+    private String stuNo;
+    private String money;
     private String lostDate;
+
+    public String getCardNo() {
+        return cardNo;
+    }
+
+    public void setCardNo(String cardNo) {
+        this.cardNo = cardNo;
+    }
+
+    public String getStuNo() {
+        return stuNo;
+    }
+
+    public void setStuNo(String stuNo) {
+        this.stuNo = stuNo;
+    }
+
+    public String getMoney() {
+        return money;
+    }
+
+    public void setMoney(String money) {
+        this.money = money;
+    }
 
     public String getId() {
         return id;
