@@ -59,6 +59,7 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
         classList.setOnClickListener(this);
         stuList.setOnClickListener(this);
         timetable.setOnClickListener(this);
+        setInfo.setOnClickListener(this);
     }
 
     @Override
@@ -98,6 +99,9 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
             case R.id.stuList:
                 break;
             case R.id.setInfo:
+                container.setVisibility(View.GONE);
+                datePickerContainer.setVisibility(View.VISIBLE);
+
                 break;
         }
     }

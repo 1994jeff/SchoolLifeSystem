@@ -3,6 +3,7 @@ package com.my.app.schoollifesystem.ui.adapter;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -120,15 +121,16 @@ public class CardListAdapter extends BaseAdapter {
     private void setStatus(CardDto dto) {
         String url = "?cardNo="+dto.getCardNo();
         if (dto.getStatus().equals("2")) {
-            url+="&lostDate="+new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+            url+="&lostDate='"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())+"'";
             url+="&status=1";
         }else{
             url+="&status=2";
         }
-
-        VolleyRequest.requestGet(mContext, Constant.BASE_API+Constant.CARD_LIST+url,"",null,new VolleyInterface(mContext,VolleyInterface.mListener,VolleyInterface.mErrorListener){
+        Log.i("onclick",""+url);
+        VolleyRequest.requestGet(mContext, Constant.BASE_API+Constant.CARD_STATUS+url,"",null,new VolleyInterface(mContext,VolleyInterface.mListener,VolleyInterface.mErrorListener){
             @Override
             public void onSuccess(String result) {
+                Log.i("onclick",""+result);
                 String json = result.replace("\\", "");
                 json = json.substring(1, json.length() - 1);
                 JSONObject jsonObject = (JSONObject) JSON.parse(json);
@@ -145,7 +147,7 @@ public class CardListAdapter extends BaseAdapter {
 
             @Override
             public void onError(VolleyError error) {
-
+                Log.i("onclick",""+error.getMessage());
             }
         });
     }

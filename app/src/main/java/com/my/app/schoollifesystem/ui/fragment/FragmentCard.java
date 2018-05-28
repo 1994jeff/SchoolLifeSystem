@@ -85,19 +85,19 @@ public class FragmentCard extends BaseCoreFragment<CardPresenter> implements Vie
         searchCardList.setAdapter(searchCardAdapter);
         sendBtn.setOnClickListener(this);
         sendAllBtn.setOnClickListener(this);
-        cardList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> view, View view1, int i, long l) {
-
-            }
-        });
-        searchCardList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> view, View view1, int i, long l) {
-                searchCardList.setVisibility(View.GONE);
-                cardList.setVisibility(View.VISIBLE);
-            }
-        });
+//        cardList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> view, View view1, int i, long l) {
+//
+//            }
+//        });
+//        searchCardList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> view, View view1, int i, long l) {
+//                searchCardList.setVisibility(View.GONE);
+//                cardList.setVisibility(View.VISIBLE);
+//            }
+//        });
 
         getCardList();
     }
@@ -188,6 +188,7 @@ public class FragmentCard extends BaseCoreFragment<CardPresenter> implements Vie
                     int size = jsonArray.size();
                     for(int i=0;i<size;i++){
                         searchList.add(jsonArray.getObject(i, CardDto.class));
+                        Log.i("jeff",jsonArray.getObject(i, CardDto.class).getStuName());
                     }
                     searchCardAdapter.notifyDataSetChanged();
                 }else if(code.equals(FAILED)){
