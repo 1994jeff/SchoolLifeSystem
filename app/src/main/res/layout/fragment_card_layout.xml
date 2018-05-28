@@ -28,21 +28,31 @@
             android:textColor="@color/colorWhite"
             android:background="@color/colorPrimary"
             android:text="搜索"/>
-
+        <Button
+            android:id="@+id/sendAllBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorPrimary"
+            android:text="搜索全部"/>
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/cardList"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <ListView
+            android:id="@+id/cardList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </ListView>
 
-    </ListView>
-
-    <ListView
-        android:id="@+id/searchCardList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone">
-    </ListView>
+        <ListView
+            android:id="@+id/searchCardList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+        </ListView>
+    </RelativeLayout>
 
 </LinearLayout>

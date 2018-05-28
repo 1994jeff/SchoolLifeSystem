@@ -21,6 +21,11 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
     private TextView weather;
     private TextView cityList;
     private TextView clearCity;
+    private TextView card;
+    private TextView classList;
+    private TextView stuList;
+    private TextView timetable;
+    private TextView setInfo;
 
     @Override
     protected void initView(View view) {
@@ -29,11 +34,20 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
         weather = view.findViewById(R.id.weather);
         cityList = view.findViewById(R.id.cityList);
         clearCity = view.findViewById(R.id.clearCity);
+        card = view.findViewById(R.id.card);
+        classList = view.findViewById(R.id.classList);
+        stuList = view.findViewById(R.id.stuList);
+        timetable = view.findViewById(R.id.timetable);
+        setInfo = view.findViewById(R.id.setInfo);
         myInfo.setOnClickListener(this);
         schoolTalk.setOnClickListener(this);
         weather.setOnClickListener(this);
         cityList.setOnClickListener(this);
         clearCity.setOnClickListener(this);
+        card.setOnClickListener(this);
+        classList.setOnClickListener(this);
+        stuList.setOnClickListener(this);
+        timetable.setOnClickListener(this);
     }
 
     @Override
@@ -60,6 +74,17 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
                 break;
             case R.id.clearCity:
                 clear();
+                break;
+            case R.id.card:
+                switchFragment(new FragmentCard(),R.string.card);
+                break;
+            case R.id.classList:
+                break;
+            case R.id.timetable:
+                break;
+            case R.id.stuList:
+                break;
+            case R.id.setInfo:
                 break;
         }
     }

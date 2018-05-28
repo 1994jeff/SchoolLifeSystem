@@ -35,6 +35,51 @@
     <include layout="@layout/line_layout"/>
 
     <TextView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="校园卡"
+        android:padding="20dp"
+        />
+    <include layout="@layout/line_layout"/>
+
+    <TextView
+        android:id="@+id/classList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="班级信息"
+        android:padding="20dp"
+        />
+    <include layout="@layout/line_layout"/>
+
+    <TextView
+        android:id="@+id/stuList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="学生信息"
+        android:padding="20dp"
+        />
+    <include layout="@layout/line_layout"/>
+
+    <TextView
+        android:id="@+id/timetable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="课程表"
+        android:padding="20dp"
+        />
+    <include layout="@layout/line_layout"/>
+
+    <TextView
+        android:id="@+id/setInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="课程提醒"
+        android:padding="20dp"
+        />
+    <include layout="@layout/line_layout"/>
+
+    <TextView
         android:id="@+id/cityList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

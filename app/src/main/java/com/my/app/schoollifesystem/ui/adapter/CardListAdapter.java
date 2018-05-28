@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.my.app.schoollifesystem.R;
 import com.my.app.schoollifesystem.bean.Card;
+import com.my.app.schoollifesystem.bean.CardDto;
 
 import java.util.List;
 
@@ -23,10 +24,10 @@ public class CardListAdapter extends BaseAdapter {
     public static final int FLAG_SEARCH_LIST = 0x2;
 
     Context mContext;
-    List<Card> mCardList;
+    List<CardDto> mCardList;
     int flag;
 
-    public CardListAdapter(Context context, List<Card> cardList, int flag) {
+    public CardListAdapter(Context context, List<CardDto> cardList, int flag) {
         this.mCardList = cardList;
         this.mContext = context;
         this.flag = flag;
@@ -53,15 +54,17 @@ public class CardListAdapter extends BaseAdapter {
         ViewHolder viewHolder = null;
         if(view==null)
         {
-            view = LayoutInflater.from(mContext).inflate(R.layout.item_card_layout, null);
+            view = LayoutInflater.from(mContext).inflate(R.layout.item_card_layout, group,false);
             viewHolder = new ViewHolder(view);
             view.setTag(viewHolder);
         }else {
             viewHolder = (ViewHolder) view.getTag();
         }
-        Card card = mCardList.get(i);
+        CardDto card = mCardList.get(i);
         viewHolder.cardId.setText(card.getId());
-        viewHolder.cardNum.setText(card.getNum());
+        viewHolder.cardNum.setText(card.getCardNo());
+        viewHolder.money.setText(card.getMoney());
+        viewHolder.stuName.setText(card.getStuName());
         if(card.getStatus().equals("1")){
             viewHolder.cardStatus.setText("挂失");
         }else{
@@ -70,8 +73,10 @@ public class CardListAdapter extends BaseAdapter {
         viewHolder.cardTime.setText(card.getLostDate());
         if(flag==FLAG_NORMAL_LIST){
             viewHolder.guaShi.setVisibility(View.GONE);
+            viewHolder.cardTime.setVisibility(View.VISIBLE);
         }else if(flag==FLAG_SEARCH_LIST) {
             viewHolder.guaShi.setVisibility(View.VISIBLE);
+            viewHolder.cardTime.setVisibility(View.GONE);
         }
         viewHolder.guaShi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,12 +94,16 @@ public class CardListAdapter extends BaseAdapter {
         public TextView cardStatus;
         public TextView cardTime;
         public TextView guaShi;
+        public TextView money;
+        public TextView stuName;
         public LinearLayout listLayout;
 
         public ViewHolder(View rootView) {
             this.rootView = rootView;
             this.cardId = (TextView) rootView.findViewById(R.id.cardId);
             this.cardNum = (TextView) rootView.findViewById(R.id.cardNum);
+            this.stuName = (TextView) rootView.findViewById(R.id.stuName);
+            this.money = (TextView) rootView.findViewById(R.id.money);
             this.cardStatus = (TextView) rootView.findViewById(R.id.cardStatus);
             this.cardTime = (TextView) rootView.findViewById(R.id.cardTime);
             this.guaShi = (TextView) rootView.findViewById(R.id.guaShi);
