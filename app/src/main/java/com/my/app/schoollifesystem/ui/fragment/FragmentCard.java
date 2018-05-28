@@ -1,6 +1,8 @@
 package com.my.app.schoollifesystem.ui.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -60,6 +62,14 @@ public class FragmentCard extends BaseCoreFragment<CardPresenter> implements Vie
         return mPresenter == null ? new CardPresenter() : mPresenter;
     }
 
+    Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            showFragmentToast(msg.obj.toString());
+            getCardList();
+        }
+    };
+
     @Override
     protected void initView(View view) {
         searchCardList = view.findViewById(R.id.searchCardList);
@@ -69,8 +79,8 @@ public class FragmentCard extends BaseCoreFragment<CardPresenter> implements Vie
         cardNum = view.findViewById(R.id.cardNum);
         sendBtn = view.findViewById(R.id.sendBtn);
         sendAllBtn = view.findViewById(R.id.sendAllBtn);
-        normalCardAdapter = new CardListAdapter(getActivity(),mList,CardListAdapter.FLAG_NORMAL_LIST);
-        searchCardAdapter = new CardListAdapter(getActivity(),searchList,CardListAdapter.FLAG_SEARCH_LIST);
+        normalCardAdapter = new CardListAdapter(getActivity(),mList,CardListAdapter.FLAG_NORMAL_LIST,mHandler);
+        searchCardAdapter = new CardListAdapter(getActivity(),searchList,CardListAdapter.FLAG_SEARCH_LIST,mHandler);
         cardList.setAdapter(normalCardAdapter);
         searchCardList.setAdapter(searchCardAdapter);
         sendBtn.setOnClickListener(this);
@@ -105,7 +115,7 @@ public class FragmentCard extends BaseCoreFragment<CardPresenter> implements Vie
                     mList.clear();
                     defaultD.setId("id");
                     defaultD.setCardNo("卡号");
-                    defaultD.setStuName("姓名");
+                    defaultD.setStuName("学生姓名");
                     defaultD.setStatus("挂失");
                     defaultD.setMoney("余额");
                     defaultD.setLostDate("挂失时间");
@@ -154,7 +164,7 @@ public class FragmentCard extends BaseCoreFragment<CardPresenter> implements Vie
     private void getSearchList() {
         String num = cardNum.getText().toString();
         if(TextUtils.isEmpty(num)){
-            showFragmentToast("please input card num");
+            showFragmentToast("请输入搜索卡号");
             return;
         }
         VolleyRequest.requestGet(getActivity(), Constant.BASE_API+Constant.CARD_LIST+"?cardNo="+num,"",null,new VolleyInterface(getActivity(),VolleyInterface.mListener,VolleyInterface.mErrorListener){

@@ -72,7 +72,7 @@ public class FragmentClass extends BaseCoreFragment {
                     mClassInfo.setId("id");
                     mClassInfo.setClassNo("编号");
                     mClassInfo.setClassName("班级");
-                    mClassInfo.setProfession("专业");
+                    mClassInfo.setProfession("专业名称");
                     mClassInfo.setClassPeople("班主任");
                     mClassList.add(mClassInfo);
                     JSONArray jsonArray = jsonObject.getJSONArray(RET_DATA);

@@ -19,6 +19,7 @@ public class Constant {
     public static final String REGISTER_API = "/user/insertUser.do";
     //校园卡
     public static final String CARD_LIST = "/card/getCard.do";
+    public static final String CARD_STATUS = "/card/updateCard.do";
     //学生
     public static final String STUDENT_LIST = "/card/getCard.do";
     //班级

@@ -79,6 +79,7 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
                 switchFragment(new FragmentCard(),R.string.card);
                 break;
             case R.id.classList:
+                switchFragment(new FragmentClass(),R.string.classs);
                 break;
             case R.id.timetable:
                 break;
