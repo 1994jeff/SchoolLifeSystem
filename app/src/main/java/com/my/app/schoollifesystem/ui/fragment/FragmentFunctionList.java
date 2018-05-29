@@ -1,10 +1,16 @@
 package com.my.app.schoollifesystem.ui.fragment;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +23,9 @@ import android.widget.TimePicker;
 
 import com.my.app.schoollifesystem.R;
 import com.my.app.schoollifesystem.base.BaseCoreFragment;
+import com.my.app.schoollifesystem.ui.activity.ClockActivity;
+import com.my.app.schoollifesystem.ui.activity.MainActivity;
+import com.my.app.schoollifesystem.util.MyReceiver;
 
 import java.util.Calendar;
 
@@ -38,6 +47,10 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
     LinearLayout container;
     TimePickerDialog timePickerDialog;
     DatePickerDialog datePickerDialog;
+
+    AlarmManager mAlarmManager;
+
+    Calendar mCalendar;
 
     @Override
     protected void initView(View view) {
@@ -64,6 +77,9 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
         stuList.setOnClickListener(this);
         timetable.setOnClickListener(this);
         setInfo.setOnClickListener(this);
+
+        mAlarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+        mCalendar = Calendar.getInstance();
     }
 
     @Override
@@ -98,7 +114,7 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
                 switchFragment(new FragmentClass(),R.string.classs);
                 break;
             case R.id.timetable:
-
+                switchFragment(new FragmentTimeTable(),R.string.timetable);
                 break;
             case R.id.stuList:
                 switchFragment(new FragmentStudent(),R.string.stuList);
@@ -106,6 +122,7 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
             case R.id.setInfo:
                 showDateSelect();
                 break;
+
         }
     }
 
@@ -121,20 +138,31 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
         timePickerDialog = new TimePickerDialog(getActivity(),0 ,new TimePickerDialog.OnTimeSetListener() {
             @Override
             public void onTimeSet(TimePicker picker, int i, int i1) {
-                String s= i+"-"+i1;
-                showFragmentToast(s);
+                mCalendar.set(Calendar.HOUR_OF_DAY,i);
+                mCalendar.set(Calendar.MINUTE,i1);
+                setAlarm();
+                showFragmentToast(R.string.set_ok);
             }
         },hour,min,true);
         datePickerDialog = new DatePickerDialog(getActivity(),0, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker picker, int i, int i1, int i2) {
-                String s= i+"-"+i1+"-"+i2;
-                showFragmentToast(s);
+                mCalendar.set(Calendar.YEAR,i);
+                mCalendar.set(Calendar.MONTH,i1);
+                mCalendar.set(Calendar.DAY_OF_MONTH,i2);
                 timePickerDialog.show();
             }
         },year,month,date);
         datePickerDialog.show();
 
+    }
+
+    private void setAlarm() {
+        Intent intent = new Intent(getActivity(), MyReceiver.class);
+//        intent.setComponent(new ComponentName("com.my.app.schoollifesystem.util","com.my.app.schoollifesystem.util.MyReceiver"));
+        intent.setAction("com.string.alarm.start");
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getActivity(),1,intent,0);
+        mAlarmManager.set(AlarmManager.RTC_WAKEUP,mCalendar.getTimeInMillis(),pendingIntent);
     }
 
     private void clear() {

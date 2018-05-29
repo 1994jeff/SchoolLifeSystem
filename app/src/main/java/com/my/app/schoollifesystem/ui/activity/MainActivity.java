@@ -1,23 +1,31 @@
-package com.my.app.schoollifesystem;
+package com.my.app.schoollifesystem.ui.activity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.my.app.schoollifesystem.R;
 import com.my.app.schoollifesystem.base.BaseActivity;
 import com.my.app.schoollifesystem.base.BaseFragment;
 import com.my.app.schoollifesystem.common.ActivityManager;
+import com.my.app.schoollifesystem.ui.fragment.FragmentCard;
+import com.my.app.schoollifesystem.ui.fragment.FragmentClass;
 import com.my.app.schoollifesystem.ui.fragment.FragmentFunctionList;
 import com.my.app.schoollifesystem.ui.fragment.FragmentIndex;
 import com.my.app.schoollifesystem.ui.fragment.FragmentLogin;
 import com.my.app.schoollifesystem.ui.fragment.FragmentMyCity;
 import com.my.app.schoollifesystem.ui.fragment.FragmentRegister;
+import com.my.app.schoollifesystem.ui.fragment.FragmentStudent;
 import com.my.app.schoollifesystem.ui.fragment.FragmentTalk;
+import com.my.app.schoollifesystem.ui.fragment.FragmentTimeTable;
 import com.my.app.schoollifesystem.ui.fragment.FragmentWeather;
 
 public class MainActivity extends BaseActivity {
@@ -34,7 +42,10 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ActivityManager.instance().register(this);
         initView();
+
         switchFragment(new FragmentIndex());
+
+
     }
 
     private void initView() {
@@ -95,7 +106,7 @@ public class MainActivity extends BaseActivity {
             mainHead.setVisibility(View.GONE);
             this.title.setText(R.string.login);
             fragmentHead.setVisibility(View.VISIBLE);
-        }else if(fragment instanceof FragmentMyCity){
+        }else if(fragment instanceof FragmentMyCity  || fragment instanceof FragmentCard || fragment instanceof FragmentClass || fragment instanceof FragmentStudent || fragment instanceof FragmentTimeTable){
             mainHead.setVisibility(View.VISIBLE);
             fragmentHead.setVisibility(View.GONE);
         }else if(fragment instanceof FragmentWeather){
@@ -111,6 +122,7 @@ public class MainActivity extends BaseActivity {
         backClickTime = currentTime;
         if(time>0 && time < 2000){
             finish();
+            System.exit(0);
         }else{
             Toast.makeText(this,getString(R.string.timeTooShort),Toast.LENGTH_SHORT).show();
         }

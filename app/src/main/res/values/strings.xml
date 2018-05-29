@@ -40,8 +40,12 @@
     <string name="clear_ok">添加城市列表已清除~</string>
     <string name="add_city_ok">城市添加成功!</string>
     <string name="unknow">暂无</string>
-    <string name="card">card</string>
+    <string name="card">校园卡</string>
     <string name="classs">班级信息</string>
     <string name="stuList">学生信息</string>
     <string name="no_stu">暂无学生信息</string>
+    <string name="timetable">我的课表</string>
+    <string name="set_ok">设置成功</string>
+    <string name="time_up">课程提醒</string>
+    <string name="time_table_ok">上课时间马上就要到了,请做好准备!</string>
 </resources>
