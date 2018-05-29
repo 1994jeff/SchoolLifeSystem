@@ -1,8 +1,11 @@
 package com.my.app.schoollifesystem.ui.fragment;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +13,12 @@ import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.my.app.schoollifesystem.R;
 import com.my.app.schoollifesystem.base.BaseCoreFragment;
+
+import java.util.Calendar;
 
 /**
  */
@@ -29,9 +35,9 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
     private TextView stuList;
     private TextView timetable;
     private TextView setInfo;
-    private RelativeLayout datePickerContainer;
     LinearLayout container;
-    DatePicker datePicker;
+    TimePickerDialog timePickerDialog;
+    DatePickerDialog datePickerDialog;
 
     @Override
     protected void initView(View view) {
@@ -47,8 +53,6 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
         setInfo = view.findViewById(R.id.setInfo);
 
         container = view.findViewById(R.id.contain);
-        datePickerContainer = view.findViewById(R.id.datePickerContainer);
-        datePicker = view.findViewById(R.id.datePicker);
 
         myInfo.setOnClickListener(this);
         schoolTalk.setOnClickListener(this);
@@ -97,13 +101,40 @@ public class FragmentFunctionList extends BaseCoreFragment implements View.OnCli
 
                 break;
             case R.id.stuList:
+                switchFragment(new FragmentStudent(),R.string.stuList);
                 break;
             case R.id.setInfo:
-                container.setVisibility(View.GONE);
-                datePickerContainer.setVisibility(View.VISIBLE);
-
+                showDateSelect();
                 break;
         }
+    }
+
+
+    private void showDateSelect() {
+        Log.i("jeff","showDateSelect");
+
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        int month = Calendar.getInstance().get(Calendar.MONTH);
+        int date = Calendar.getInstance().get(Calendar.DATE);
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        int min = Calendar.getInstance().get(Calendar.MINUTE);
+        timePickerDialog = new TimePickerDialog(getActivity(),0 ,new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker picker, int i, int i1) {
+                String s= i+"-"+i1;
+                showFragmentToast(s);
+            }
+        },hour,min,true);
+        datePickerDialog = new DatePickerDialog(getActivity(),0, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker picker, int i, int i1, int i2) {
+                String s= i+"-"+i1+"-"+i2;
+                showFragmentToast(s);
+                timePickerDialog.show();
+            }
+        },year,month,date);
+        datePickerDialog.show();
+
     }
 
     private void clear() {

@@ -42,4 +42,6 @@
     <string name="unknow">暂无</string>
     <string name="card">card</string>
     <string name="classs">班级信息</string>
+    <string name="stuList">学生信息</string>
+    <string name="no_stu">暂无学生信息</string>
 </resources>

@@ -104,6 +104,11 @@ public class CardListAdapter extends BaseAdapter {
                 viewHolder.guaShi.setClickable(false);
             }else{
                 viewHolder.guaShi.setClickable(true);
+                if (mCardList.get(i).getStatus().equals("2")) {
+                    viewHolder.guaShi.setText("挂失");
+                }else if(mCardList.get(i).getStatus().equals("1")){
+                    viewHolder.guaShi.setText("取消");
+                }
                 viewHolder.guaShi.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -121,7 +126,6 @@ public class CardListAdapter extends BaseAdapter {
     private void setStatus(CardDto dto) {
         String url = "?cardNo="+dto.getCardNo();
         if (dto.getStatus().equals("2")) {
-            url+="&lostDate='"+new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date())+"'";
             url+="&status=1";
         }else{
             url+="&status=2";

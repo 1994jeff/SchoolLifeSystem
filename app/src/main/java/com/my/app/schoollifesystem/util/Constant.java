@@ -21,11 +21,11 @@ public class Constant {
     public static final String CARD_LIST = "/card/getCard.do";
     public static final String CARD_STATUS = "/card/updateCard.do";
     //学生
-    public static final String STUDENT_LIST = "/card/getCard.do";
+    public static final String STUDENT_LIST = "/student/getStudent.do";
     //班级
     public static final String CLASS_LIST = "/class/getClass.do";
     //课表
-    public static final String TIMETABLE_LIST = "/card/getCard.do";
+    public static final String TIMETABLE_LIST = "/timeTable/getTimetable.do";
 
     //未来3天天气API
     public static final String WEATHER_API = "https://api.seniverse.com/v3/weather/daily.json?key=m9icgr1pa9k0ithe&location=";

@@ -139,7 +139,6 @@ public class FragmentAddCity extends BaseCoreFragment<AddCityPresenter> implemen
                 JSONObject object = (JSONObject) JSON.parse(json);
                 String code = object.getString(RET_CODE);
                 String msg = object.getString(RET_MSG);
-                Log.i("jeff",code+","+json);
                 if(code.equals(SUCCESS)){
                     JSONArray jsonArray = object.getJSONArray(RET_DATA);
                     int size = jsonArray.size();
@@ -178,7 +177,6 @@ public class FragmentAddCity extends BaseCoreFragment<AddCityPresenter> implemen
         public void afterTextChanged(Editable editable) {
             String city = searchCity.getText().toString();
             if(!TextUtils.isEmpty(city)){
-                Log.i("jeff","city not enpty");
                 sendSearchRequest(city);
                 citySearch.setVisibility(View.VISIBLE);
                 cityList.setVisibility(View.GONE);
@@ -201,7 +199,6 @@ public class FragmentAddCity extends BaseCoreFragment<AddCityPresenter> implemen
                 JSONObject object = (JSONObject) JSON.parse(json);
                 String code = object.getString(RET_CODE);
                 String msg = object.getString(RET_MSG);
-                Log.i("jeff",code+","+json);
                 if(code.equals(SUCCESS)){
                     JSONArray jsonArray = object.getJSONArray(RET_DATA);
                     int size = jsonArray.size();

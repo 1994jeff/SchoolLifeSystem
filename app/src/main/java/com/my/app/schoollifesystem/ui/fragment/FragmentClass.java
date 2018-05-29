@@ -1,5 +1,6 @@
 package com.my.app.schoollifesystem.ui.fragment;
 
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -51,7 +52,11 @@ public class FragmentClass extends BaseCoreFragment {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> view, View view1, int i, long l) {
-
+                FragmentStudent student = new FragmentStudent();
+                Bundle bundle = new Bundle();
+                bundle.putString("classNo",mClassList.get(i).getClassNo());
+                student.setArguments(bundle);
+                switchFragment(student,R.string.stuList);
             }
         });
         getClassInfo();

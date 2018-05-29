@@ -38,7 +38,6 @@ public class FragmentTalk extends BaseCoreFragment<TalkPresenter> {
     Handler mHandler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            Log.i("jeff",msg.what+"");
             switch (msg.what){
                 case 1:
                     addPeopleTalk(msg.obj);

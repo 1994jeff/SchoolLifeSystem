@@ -124,7 +124,6 @@ public class FragmentCard extends BaseCoreFragment<CardPresenter> implements Vie
                     int size = jsonArray.size();
                     for(int i=0;i<size;i++){
                         mList.add(jsonArray.getObject(i, CardDto.class));
-                        Log.i("jeff",jsonArray.getObject(i, CardDto.class).getCardNo());
                     }
                     normalCardAdapter.notifyDataSetChanged();
                 }else if(code.equals(FAILED)){
@@ -188,7 +187,6 @@ public class FragmentCard extends BaseCoreFragment<CardPresenter> implements Vie
                     int size = jsonArray.size();
                     for(int i=0;i<size;i++){
                         searchList.add(jsonArray.getObject(i, CardDto.class));
-                        Log.i("jeff",jsonArray.getObject(i, CardDto.class).getStuName());
                     }
                     searchCardAdapter.notifyDataSetChanged();
                 }else if(code.equals(FAILED)){
