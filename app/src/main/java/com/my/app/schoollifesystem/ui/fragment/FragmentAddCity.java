@@ -44,7 +44,7 @@ import static com.my.app.schoollifesystem.base.BaseModel.SUCCESS;
 import static com.my.app.schoollifesystem.common.VolleyRequest.mContext;
 
 /**
- * Created by yf on 18-5-24.
+ * 添加城市模块
  */
 
 public class FragmentAddCity extends BaseCoreFragment<AddCityPresenter> implements View.OnFocusChangeListener {

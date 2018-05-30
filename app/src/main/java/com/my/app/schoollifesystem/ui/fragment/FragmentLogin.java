@@ -10,6 +10,7 @@ import com.my.app.schoollifesystem.presenter.LoginPresenter;
 import com.my.app.schoollifesystem.view.ILoginView;
 
 /**
+ * 登录模块
  */
 
 public class FragmentLogin extends BaseCoreFragment<LoginPresenter> implements ILoginView, View.OnClickListener {

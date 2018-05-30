@@ -1,6 +1,7 @@
 package com.my.app.schoollifesystem.ui.fragment;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +26,7 @@ import com.my.app.schoollifesystem.util.Constant;
 import static com.my.app.schoollifesystem.common.VolleyRequest.mContext;
 
 /**
- * Created by yf on 18-5-22.
+ * 天气预报模块
  */
 
 public class FragmentWeather extends BaseCoreFragment<WeatherPresenter> {

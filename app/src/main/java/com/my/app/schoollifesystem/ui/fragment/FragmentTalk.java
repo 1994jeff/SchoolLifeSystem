@@ -21,7 +21,7 @@ import com.my.app.schoollifesystem.util.TcpClient;
 import com.my.app.schoollifesystem.util.ThreadPoolUtils;
 
 /**
- * Created by yf on 18-5-23.
+ * 聊天模块
  */
 
 public class FragmentTalk extends BaseCoreFragment<TalkPresenter> {

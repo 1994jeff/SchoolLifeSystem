@@ -12,6 +12,8 @@ import com.my.app.schoollifesystem.presenter.RegisterPresenter;
 import com.my.app.schoollifesystem.view.IRegisterView;
 
 /**
+ * 注册模块
+
  */
 
 public class FragmentRegister extends BaseCoreFragment<RegisterPresenter> implements IRegisterView, View.OnClickListener {

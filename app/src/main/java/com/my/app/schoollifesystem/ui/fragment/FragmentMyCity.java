@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by yf on 18-5-24.
+ * 城市列表模块
  */
 
 public class FragmentMyCity extends BaseCoreFragment<MyCityPresenter> {

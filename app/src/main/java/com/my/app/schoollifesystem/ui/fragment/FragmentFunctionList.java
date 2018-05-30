@@ -30,6 +30,7 @@ import com.my.app.schoollifesystem.util.MyReceiver;
 import java.util.Calendar;
 
 /**
+ * 我的功能模块
  */
 
 public class FragmentFunctionList extends BaseCoreFragment implements View.OnClickListener {

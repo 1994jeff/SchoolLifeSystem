@@ -26,7 +26,7 @@ import static com.my.app.schoollifesystem.base.BaseModel.RET_MSG;
 import static com.my.app.schoollifesystem.base.BaseModel.SUCCESS;
 
 /**
- * Created by yf on 18-5-29.
+ * 课表模块
  */
 
 public class FragmentTimeTable extends BaseCoreFragment {

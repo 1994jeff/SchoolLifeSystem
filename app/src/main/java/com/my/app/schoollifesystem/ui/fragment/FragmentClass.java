@@ -29,7 +29,7 @@ import static com.my.app.schoollifesystem.base.BaseModel.RET_MSG;
 import static com.my.app.schoollifesystem.base.BaseModel.SUCCESS;
 
 /**
- * Created by yf on 18-5-28.
+ * 班级信息模块
  */
 
 public class FragmentClass extends BaseCoreFragment {

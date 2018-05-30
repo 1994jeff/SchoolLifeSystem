@@ -6,6 +6,8 @@ import com.my.app.schoollifesystem.R;
 import com.my.app.schoollifesystem.base.BaseFragment;
 
 /**
+ *  校园介绍模块
+
  */
 
 public class FragmentIndex extends BaseFragment {
